@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Finalize website to-do list items and polish UI/UX elements.**
+- [~] **Track: Finalize website to-do list items and polish UI/UX elements.**
   *Link: [./conductor/tracks/finalize_todo_20260206/](./conductor/tracks/finalize_todo_20260206/)*
