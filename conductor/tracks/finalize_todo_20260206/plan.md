@@ -30,8 +30,8 @@ Integrate SEO, Analytics, and Social Proof.
 ## Phase 3: UI/UX Polishing & Audience Targeting
 Refine the layout to emphasize key services and target audiences.
 
-- [ ] Task: Refine Service Highlighting
+- [x] Task: Refine Service Highlighting 525d108
     - [ ] Update `Services.tsx` or `Hero.tsx` to push BLS/Heartsaver/Group classes
-- [ ] Task: Audience Targeting Copy
+- [~] Task: Audience Targeting Copy
     - [ ] Update copy in `About.tsx` or a new section to explicitly target businesses and schools
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: UI/UX Polishing & Audience Targeting' (Protocol in workflow.md)
