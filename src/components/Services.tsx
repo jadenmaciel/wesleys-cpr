@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Heart, Briefcase, Users, Stethoscope, Home, Building2, Star, TrendingUp, ShieldCheck } from 'lucide-react';
 import WeeklySchedule from "./WeeklySchedule";
 
