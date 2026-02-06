@@ -14,7 +14,7 @@ Update all static data and core logic to reflect the new pricing and scheduling 
     - [ ] Enforce class size limits (4-18 for AHA, 4-24 for Red Cross) in UI copy
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Content & Pricing Alignment' (Protocol in workflow.md) 91de7d1
 
-## Phase 2: Marketing & Discovery Features
+## Phase 2: Marketing & Discovery Features [checkpoint: 17f1c32]
 Integrate SEO, Analytics, and Social Proof.
 
 - [x] Task: SEO Optimization 83ecb65
