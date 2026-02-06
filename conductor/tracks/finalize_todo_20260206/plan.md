@@ -3,7 +3,7 @@
 ## Phase 1: Content & Pricing Alignment
 Update all static data and core logic to reflect the new pricing and scheduling reality.
 
-- [ ] Task: Update course data in `src/data/courses.ts`
+- [x] Task: Update course data in `src/data/courses.ts` df7872d
     - [ ] Update BLS Renewal price to $85
     - [ ] Update BLS Provider price to $110
     - [ ] Update American Red Cross BLS price to $125
