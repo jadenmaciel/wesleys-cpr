@@ -1,7 +1,10 @@
+import React, { useState } from 'react';
 import { Heart, Briefcase, Users, Stethoscope, Home, Building2 } from 'lucide-react';
 import WeeklySchedule from "./WeeklySchedule";
 
 export default function Services() {
+  const [mobileTab, setMobileTab] = useState<'AHA' | 'ARC'>('AHA');
+
   const services = [
     {
       icon: Heart,
@@ -45,11 +48,13 @@ export default function Services() {
     },
     {
       icon: Building2,
+      isMobile: true,
       title: 'Mobile & Workplace Training',
       description: 'We bring our certified instruction to your office, school, or organization. Group discounts available.',
       duration: 'Flexible',
-      certification: 'Custom Options',
-      details: 'Min 3 / Max 19 • Ages 12+ • Location varies by group size',
+      certification: mobileTab === 'AHA' ? 'AHA Certification' : 'American Red Cross',
+      details: mobileTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
+      price: mobileTab === 'AHA' ? 'Starting at $110' : 'Starting at $125',
     },
   ];
 
@@ -69,13 +74,40 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-red group hover:scale-105 transform bg-cream"
+              className="rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-red group hover:scale-105 transform bg-cream flex flex-col"
             >
               <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform bg-red">
                 <service.icon className="text-cream" size={32} />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-dark">{service.title}</h3>
-              <p className="leading-relaxed mb-4 text-dark">{service.description}</p>
+              
+              {service.isMobile && (
+                <div className="flex mb-4 p-1 bg-navy/10 rounded-lg">
+                  <button
+                    onClick={() => setMobileTab('AHA')}
+                    className={`flex-1 py-2 px-4 rounded-md text-sm font-semibold transition-all ${
+                      mobileTab === 'AHA' 
+                        ? 'bg-red text-cream shadow-sm' 
+                        : 'text-dark hover:bg-navy/5'
+                    }`}
+                  >
+                    AHA
+                  </button>
+                  <button
+                    onClick={() => setMobileTab('ARC')}
+                    className={`flex-1 py-2 px-4 rounded-md text-sm font-semibold transition-all ${
+                      mobileTab === 'ARC' 
+                        ? 'bg-red text-cream shadow-sm' 
+                        : 'text-dark hover:bg-navy/5'
+                    }`}
+                  >
+                    American Red Cross
+                  </button>
+                </div>
+              )}
+
+              <p className="leading-relaxed mb-4 text-dark flex-grow">{service.description}</p>
+              
               <div className="space-y-2">
                 <div className="flex items-center text-sm text-dark">
                   <span className="font-semibold mr-2">Duration:</span>
@@ -85,6 +117,12 @@ export default function Services() {
                   <span className="font-semibold mr-2">Certification:</span>
                   <span>{service.certification}</span>
                 </div>
+                {service.price && (
+                  <div className="flex items-center text-sm text-dark">
+                    <span className="font-semibold mr-2">Pricing:</span>
+                    <span>{service.price}</span>
+                  </div>
+                )}
                 {service.details && (
                   <div className="text-xs text-dark/80 mt-2">
                     {service.details}
