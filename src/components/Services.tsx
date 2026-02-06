@@ -1,11 +1,42 @@
 import React, { useState } from 'react';
-import { Heart, Briefcase, Users, Stethoscope, Home, Building2 } from 'lucide-react';
+import { Heart, Briefcase, Users, Stethoscope, Home, Building2, Star, TrendingUp, ShieldCheck } from 'lucide-react';
 import WeeklySchedule from "./WeeklySchedule";
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState<'AHA' | 'ARC'>('AHA');
 
   const services = [
+    {
+      icon: Stethoscope,
+      title: 'BLS for Healthcare Providers',
+      description: 'Advanced training for medical professionals including high-quality CPR and team dynamics.',
+      duration: '4 hours',
+      certification: activeTab === 'AHA' ? 'AHA e-card' : 'American Red Cross',
+      details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
+      highlight: 'Most Popular',
+      highlightIcon: Star,
+    },
+    {
+      icon: Users,
+      title: 'Heartsaver First Aid/CPR/AED',
+      description: 'Perfect for childcare workers, teachers, and those who need workplace certification.',
+      duration: '6 hours',
+      certification: activeTab === 'AHA' ? 'AHA e-card' : 'American Red Cross',
+      details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
+      highlight: 'Workplace standard',
+      highlightIcon: ShieldCheck,
+    },
+    {
+      icon: Building2,
+      title: 'Mobile & Workplace Training',
+      description: 'We bring our certified instruction to your office, school, or organization. Group discounts available.',
+      duration: 'Flexible',
+      certification: activeTab === 'AHA' ? 'AHA Certification' : 'American Red Cross',
+      details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
+      price: activeTab === 'AHA' ? 'Starting at $110' : 'Starting at $125',
+      highlight: 'Corporate Choice',
+      highlightIcon: TrendingUp,
+    },
     {
       icon: Heart,
       title: 'CPR & AED',
@@ -23,37 +54,14 @@ export default function Services() {
       details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
     },
     {
-      icon: Users,
-      title: 'Heartsaver First Aid/CPR/AED',
-      description: 'Perfect for childcare workers, teachers, and those who need workplace certification.',
-      duration: '6 hours',
-      certification: activeTab === 'AHA' ? 'AHA e-card' : 'American Red Cross',
-      details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
-    },
-    {
-      icon: Stethoscope,
-      title: 'BLS for Healthcare Providers',
-      description: 'Advanced training for medical professionals including high-quality CPR and team dynamics.',
-      duration: '4 hours',
-      certification: activeTab === 'AHA' ? 'AHA e-card' : 'American Red Cross',
-      details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
-    },
-    {
       icon: Home,
       title: 'Family & Friends (Non-Certification)',
       description: 'Informal, relaxed CPR training perfect for parents, grandparents, and community groups.',
       duration: 'Approx. 2–3 hours',
       certification: 'Non-certification group',
       details: '$25/person • Min 6 / Max 12 • Ages 12+ • Upgrade to certification at standard rates',
-    },
-    {
-      icon: Building2,
-      title: 'Mobile & Workplace Training',
-      description: 'We bring our certified instruction to your office, school, or organization. Group discounts available.',
-      duration: 'Flexible',
-      certification: activeTab === 'AHA' ? 'AHA Certification' : 'American Red Cross',
-      details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
-      price: activeTab === 'AHA' ? 'Starting at $110' : 'Starting at $125',
+      highlight: 'Best for Families',
+      highlightIcon: Heart,
     },
   ];
 
@@ -96,8 +104,17 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-red group hover:scale-105 transform bg-cream flex flex-col"
+              className={`rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border group hover:scale-105 transform bg-cream flex flex-col relative overflow-hidden ${
+                service.highlight ? 'border-red ring-2 ring-red/20' : 'border-red/30'
+              }`}
             >
+              {service.highlight && (
+                <div className="absolute top-0 right-0 bg-red text-cream px-4 py-1 rounded-bl-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1 shadow-md">
+                  {service.highlightIcon && <service.highlightIcon size={12} />}
+                  {service.highlight}
+                </div>
+              )}
+              
               <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform bg-red">
                 <service.icon className="text-cream" size={32} />
               </div>
