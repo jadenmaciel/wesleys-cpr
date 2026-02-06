@@ -24,10 +24,29 @@ export default function Testimonials() {
       aria-label="Student testimonials"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <header className="mb-10">
-          <h2 className="text-3xl font-bold text-cream md:text-4xl">
-            What students are saying
-          </h2>
+        <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <h2 className="text-3xl font-bold text-cream md:text-4xl">
+              What students are saying
+            </h2>
+            <div className="mt-2 flex items-center gap-2 text-cream/80">
+              <span className="flex text-yellow-400" aria-label="5.0 average rating">
+                ★★★★★
+              </span>
+              <span className="text-sm font-medium">5.0 average on Google Reviews</span>
+            </div>
+          </div>
+          <a
+            href="https://www.google.com/maps/search/Wesley's+CPR+Fresno"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-sm font-semibold text-cream hover:bg-white/20 transition-colors"
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true">
+              <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.908 3.152-1.928 4.172-1.228 1.228-3.152 2.576-6.6 2.576-5.384 0-9.648-4.368-9.648-9.752s4.264-9.752 9.648-9.752c2.92 0 5.12 1.152 6.648 2.576l2.32-2.32C18.816 1.712 16.024 0 12.48 0 5.8 0 .448 5.352.448 12s5.352 12 12.032 12c3.544 0 6.232-1.16 8.352-3.344 2.16-2.16 2.84-5.216 2.84-7.664 0-.736-.064-1.424-.184-2.072H12.48z" />
+            </svg>
+            See all reviews on Google
+          </a>
         </header>
 
         <div className="relative overflow-x-auto no-scrollbar group">
