@@ -1,6 +1,6 @@
 # Implementation Plan: Finalize Website To-Do List & Polish
 
-## Phase 1: Content & Pricing Alignment
+## Phase 1: Content & Pricing Alignment [checkpoint: 91de7d1]
 Update all static data and core logic to reflect the new pricing and scheduling reality.
 
 - [x] Task: Update course data in `src/data/courses.ts` df7872d
@@ -12,7 +12,7 @@ Update all static data and core logic to reflect the new pricing and scheduling 
 - [x] Task: Update mobile/workplace training details e40a50f
     - [ ] Implement separate sections/tabs for AHA vs Red Cross
     - [ ] Enforce class size limits (4-18 for AHA, 4-24 for Red Cross) in UI copy
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Content & Pricing Alignment' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Content & Pricing Alignment' (Protocol in workflow.md) 91de7d1
 
 ## Phase 2: Marketing & Discovery Features
 Integrate SEO, Analytics, and Social Proof.
