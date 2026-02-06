@@ -3,7 +3,7 @@ import { Heart, Briefcase, Users, Stethoscope, Home, Building2 } from 'lucide-re
 import WeeklySchedule from "./WeeklySchedule";
 
 export default function Services() {
-  const [mobileTab, setMobileTab] = useState<'AHA' | 'ARC'>('AHA');
+  const [activeTab, setActiveTab] = useState<'AHA' | 'ARC'>('AHA');
 
   const services = [
     {
@@ -11,32 +11,32 @@ export default function Services() {
       title: 'CPR & AED',
       description: 'Learn life-saving CPR techniques and automated external defibrillator use for adults, children, and infants.',
       duration: '6 hours',
-      certification: 'AHA e-card (ARC on request, +$12)',
-      details: 'Min 3 / Max 19 • Ages 12+ • Location varies by group size',
+      certification: activeTab === 'AHA' ? 'AHA e-card' : 'American Red Cross',
+      details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
     },
     {
       icon: Briefcase,
       title: 'First Aid',
       description: 'Comprehensive training in emergency response, wound care, and medical emergency recognition.',
       duration: '6 hours',
-      certification: 'AHA e-card (ARC on request, +$12)',
-      details: 'Min 3 / Max 19 • Ages 12+ • Location varies by group size',
+      certification: activeTab === 'AHA' ? 'AHA e-card' : 'American Red Cross',
+      details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
     },
     {
       icon: Users,
       title: 'Heartsaver First Aid/CPR/AED',
       description: 'Perfect for childcare workers, teachers, and those who need workplace certification.',
       duration: '6 hours',
-      certification: 'AHA e-card (ARC on request, +$12)',
-      details: 'Min 3 / Max 19 • Ages 12+ • Location varies by group size',
+      certification: activeTab === 'AHA' ? 'AHA e-card' : 'American Red Cross',
+      details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
     },
     {
       icon: Stethoscope,
       title: 'BLS for Healthcare Providers',
       description: 'Advanced training for medical professionals including high-quality CPR and team dynamics.',
       duration: '4 hours',
-      certification: 'AHA e-card (ARC on request, +$12)',
-      details: 'Min 3 / Max 19 • Ages 12+ • Location varies by group size',
+      certification: activeTab === 'AHA' ? 'AHA e-card' : 'American Red Cross',
+      details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
     },
     {
       icon: Home,
@@ -48,13 +48,12 @@ export default function Services() {
     },
     {
       icon: Building2,
-      isMobile: true,
       title: 'Mobile & Workplace Training',
       description: 'We bring our certified instruction to your office, school, or organization. Group discounts available.',
       duration: 'Flexible',
-      certification: mobileTab === 'AHA' ? 'AHA Certification' : 'American Red Cross',
-      details: mobileTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
-      price: mobileTab === 'AHA' ? 'Starting at $110' : 'Starting at $125',
+      certification: activeTab === 'AHA' ? 'AHA Certification' : 'American Red Cross',
+      details: activeTab === 'AHA' ? 'Min 4 / Max 18 • Ages 12+' : 'Min 4 / Max 24 • Ages 12+',
+      price: activeTab === 'AHA' ? 'Starting at $110' : 'Starting at $125',
     },
   ];
 
@@ -65,9 +64,32 @@ export default function Services() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cream">
             Our Training Programs
           </h2>
-          <p className="text-xl max-w-3xl mx-auto text-cream">
+          <p className="text-xl max-w-3xl mx-auto text-cream mb-8">
             From healthcare professionals to concerned parents, we offer courses tailored to your needs and certification requirements.
           </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 max-w-2xl mx-auto">
+            <button
+              onClick={() => setActiveTab('AHA')}
+              className={`flex-1 py-4 px-6 rounded-xl text-lg font-bold transition-all transform hover:scale-105 ${
+                activeTab === 'AHA'
+                  ? 'bg-red text-cream shadow-xl border-2 border-red'
+                  : 'bg-cream text-dark border-2 border-transparent hover:border-red/50'
+              }`}
+            >
+              American Heart Association (AHA)
+            </button>
+            <button
+              onClick={() => setActiveTab('ARC')}
+              className={`flex-1 py-4 px-6 rounded-xl text-lg font-bold transition-all transform hover:scale-105 ${
+                activeTab === 'ARC'
+                  ? 'bg-red text-cream shadow-xl border-2 border-red'
+                  : 'bg-cream text-dark border-2 border-transparent hover:border-red/50'
+              }`}
+            >
+              American Red Cross (ARC)
+            </button>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -80,34 +102,7 @@ export default function Services() {
                 <service.icon className="text-cream" size={32} />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-dark">{service.title}</h3>
-              
-              {service.isMobile && (
-                <div className="flex mb-4 p-1 bg-navy/10 rounded-lg">
-                  <button
-                    onClick={() => setMobileTab('AHA')}
-                    className={`flex-1 py-2 px-4 rounded-md text-sm font-semibold transition-all ${
-                      mobileTab === 'AHA' 
-                        ? 'bg-red text-cream shadow-sm' 
-                        : 'text-dark hover:bg-navy/5'
-                    }`}
-                  >
-                    AHA
-                  </button>
-                  <button
-                    onClick={() => setMobileTab('ARC')}
-                    className={`flex-1 py-2 px-4 rounded-md text-sm font-semibold transition-all ${
-                      mobileTab === 'ARC' 
-                        ? 'bg-red text-cream shadow-sm' 
-                        : 'text-dark hover:bg-navy/5'
-                    }`}
-                  >
-                    American Red Cross
-                  </button>
-                </div>
-              )}
-
               <p className="leading-relaxed mb-4 text-dark flex-grow">{service.description}</p>
-              
               <div className="space-y-2">
                 <div className="flex items-center text-sm text-dark">
                   <span className="font-semibold mr-2">Duration:</span>

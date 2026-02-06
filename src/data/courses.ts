@@ -58,7 +58,7 @@ export const COURSES: Course[] = [
     code: "ARC-BLS",
     name: "American Red Cross BLS",
     price: 125,
-    desc: "Red Cross certification • 2-year validity • Professional credential • +$12 surcharge per certification (ARC charges us $42/card)",
+    desc: "Red Cross certification • 2-year validity • Professional credential",
   },
   {
     code: "N95-FIT-TESTING",

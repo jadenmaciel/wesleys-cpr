@@ -143,7 +143,7 @@ export default function PoliciesSection() {
                       <strong>Late Arrival:</strong> If you arrive after skills practice begins, you must reschedule.
                     </div>
                     <div>
-                      <strong>Certification:</strong> <strong>AHA e-card only</strong> (typically received within 24-48 hours). ARC certification available by request for <strong>+$12</strong> per certificate.
+                      <strong>Certification:</strong> <strong>AHA e-card</strong> (typically received within 24-48 hours).
                     </div>
                     <div>
                       <strong>Waiver:</strong> Release of Liability required for all participants (parent/guardian signs for minors).
