@@ -32,6 +32,6 @@ Refine the layout to emphasize key services and target audiences.
 
 - [x] Task: Refine Service Highlighting 525d108
     - [ ] Update `Services.tsx` or `Hero.tsx` to push BLS/Heartsaver/Group classes
-- [~] Task: Audience Targeting Copy
+- [x] Task: Audience Targeting Copy 4317cf1
     - [ ] Update copy in `About.tsx` or a new section to explicitly target businesses and schools
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: UI/UX Polishing & Audience Targeting' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 3: UI/UX Polishing & Audience Targeting' (Protocol in workflow.md)
