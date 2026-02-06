@@ -9,7 +9,7 @@ Update all static data and core logic to reflect the new pricing and scheduling 
     - [ ] Update American Red Cross BLS price to $125
     - [ ] Update American Red Cross Heartsaver price to $140
     - [ ] Update schedule copy for BLS Renewal and Provider
-- [ ] Task: Update mobile/workplace training details
+- [x] Task: Update mobile/workplace training details dd113ab
     - [ ] Implement separate sections/tabs for AHA vs Red Cross
     - [ ] Enforce class size limits (4-18 for AHA, 4-24 for Red Cross) in UI copy
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Content & Pricing Alignment' (Protocol in workflow.md)
