@@ -9,12 +9,9 @@ import Booking from './components/Booking';
 import Testimonials from './components/Testimonials';
 import PoliciesSection from './components/PoliciesSection';
 import Footer from './components/Footer';
-import Analytics from './components/Analytics';
-
 function App() {
   return (
     <div className="min-h-screen bg-white">
-      <Analytics />
       <Helmet>
         <title>Wesley's CPR — Professional CPR, BLS, and First Aid Training in Central Valley, CA</title>
         <meta name="description" content="Wesley's CPR offers professional AHA-aligned CPR, BLS, and First Aid training. Book certification courses online for individuals, healthcare workers, and workplaces in the Central Valley." />
