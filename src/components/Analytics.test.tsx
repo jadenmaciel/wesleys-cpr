@@ -7,33 +7,32 @@ describe('Analytics Component', () => {
     document.head.innerHTML = '';
   });
 
-  it('should not inject scripts if GA ID is missing', () => {
+  it('should not inject scripts if Umami ID is missing', () => {
     // @ts-ignore
-    import.meta.env.VITE_GA_ID = '';
+    import.meta.env.VITE_UMAMI_ID = '';
     render(<Analytics />);
     const scripts = document.head.querySelectorAll('script');
     expect(scripts.length).toBe(0);
   });
 
-  it('should inject scripts if GA ID is provided', () => {
+  it('should inject script if Umami ID is provided', () => {
     // @ts-ignore
-    import.meta.env.VITE_GA_ID = 'G-123456';
+    import.meta.env.VITE_UMAMI_ID = '9b2d7387-1122-47ac-909a-1f7f8bf80f10';
     render(<Analytics />);
     const scripts = document.head.querySelectorAll('script');
-    expect(scripts.length).toBe(2);
+    expect(scripts.length).toBe(1);
     
-    const gaScript = Array.from(scripts).find(s => s.src.includes('googletagmanager.com/gtag/js'));
-    expect(gaScript?.src).toContain('id=G-123456');
-    
-    const inlineScript = Array.from(scripts).find(s => s.innerHTML.includes("gtag('config'"));
-    expect(inlineScript?.innerHTML).toContain("gtag('config', 'G-123456')");
+    const script = scripts[0];
+    expect(script.src).toBe('https://cloud.umami.is/script.js');
+    expect(script.getAttribute('data-website-id')).toBe('9b2d7387-1122-47ac-909a-1f7f8bf80f10');
+    expect(script.hasAttribute('defer')).toBe(true);
   });
 
-  it('should remove scripts on unmount', () => {
+  it('should remove script on unmount', () => {
     // @ts-ignore
-    import.meta.env.VITE_GA_ID = 'G-123456';
+    import.meta.env.VITE_UMAMI_ID = '9b2d7387-1122-47ac-909a-1f7f8bf80f10';
     const { unmount } = render(<Analytics />);
-    expect(document.head.querySelectorAll('script').length).toBe(2);
+    expect(document.head.querySelectorAll('script').length).toBe(1);
     unmount();
     expect(document.head.querySelectorAll('script').length).toBe(0);
   });

@@ -6,7 +6,7 @@ This track focuses on completing the remaining tasks outlined in `DOCS/WEBSITE_T
 ## Functional Requirements
 ### 1. Marketing & Discovery
 - **SEO Optimization:** Implement/improve SEO tags, meta descriptions, and structured data.
-- **Analytics Integration:** Add Google Analytics or a similar privacy-conscious tracking tool.
+- **Analytics Integration:** Add Umami Analytics (privacy-conscious tracking tool).
 - **Google Reviews:** Integrate a widget or custom section to showcase real student reviews.
 
 ### 2. Content & Accuracy
@@ -37,7 +37,7 @@ This track focuses on completing the remaining tasks outlined in `DOCS/WEBSITE_T
 ## Acceptance Criteria
 - [ ] All pricing displayed on the site matches the updated values in `spec.md`.
 - [ ] SEO meta tags are present and accurate for all primary pages/routes.
-- [ ] Google Analytics is successfully receiving events (verified in dev console).
+- [ ] Umami Analytics is successfully receiving events (verified in dev console).
 - [ ] Google Reviews are visible and styled according to the project's visual identity.
 - [ ] AHA and Red Cross sections are clearly separated and display correct class size limits.
 

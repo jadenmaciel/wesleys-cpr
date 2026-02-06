@@ -21,11 +21,11 @@ Integrate SEO, Analytics, and Social Proof.
     - [ ] Write Tests: Verify meta tags are rendered correctly in `App.tsx` or specialized SEO component
     - [ ] Implement: Update `react-helmet-async` usage with descriptive meta tags and Open Graph data
 - [x] Task: Analytics Integration fd41b2e
-    - [ ] Implement: Add Google Analytics initialization script (respecting environment variables)
+    - [ ] Implement: Add Umami Analytics initialization script (respecting environment variables)
 - [x] Task: Google Reviews Integration b90ddbe
     - [ ] Write Tests: Verify Review component renders list of reviews
     - [ ] Implement: Create a `Reviews` section/component using data from `src/data/reviews.ts` (or external widget if provided)
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Marketing & Discovery Features' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 2: Marketing & Discovery Features' (Protocol in workflow.md)
 
 ## Phase 3: UI/UX Polishing & Audience Targeting
 Refine the layout to emphasize key services and target audiences.
