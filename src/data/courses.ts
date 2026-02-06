@@ -43,21 +43,21 @@ export const COURSES: Course[] = [
   {
     code: "BLS-PROVIDER",
     name: "BLS Provider",
-    price: 100,
-    desc: "Healthcare professionals • 2-year certification • 4-hour comprehensive training (AHA minimum) • In-depth clinical training",
+    price: 110,
+    desc: "Healthcare professionals • 2-year certification • 4-hour comprehensive training (AHA minimum) • Mon & Wed at 8am",
   },
   {
     code: "BLS-RENEWAL",
     name: "BLS Renewal",
-    price: 100,
-    desc: "Returning customers receive a 10% discount • Refresher course • 4-hour comprehensive training (AHA minimum)",
+    price: 85,
+    desc: "Returning customers receive a 10% discount • Refresher course • 4-hour comprehensive training (AHA minimum) • Mon–Wed at 1pm",
     notes: ["Returning customers receive a 10% discount"],
   },
 
   {
     code: "ARC-BLS",
     name: "American Red Cross BLS",
-    price: 110,
+    price: 125,
     desc: "Red Cross certification • 2-year validity • Professional credential • +$12 surcharge per certification (ARC charges us $42/card)",
   },
   {
@@ -77,8 +77,8 @@ export const COURSES: Course[] = [
   },
   {
     code: "HEARTSAVER-CPR-AED",
-    name: "American Red Cross Heartsaver Course – $125",
-    price: 125,
+    name: "American Red Cross Heartsaver Course",
+    price: 140,
     desc: "Essential life-saving skills • 2-year certification • 4-hour comprehensive training (AHA minimum)",
   },
   {
