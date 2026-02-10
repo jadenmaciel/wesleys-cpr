@@ -20,6 +20,7 @@ Wesley's CPR offers the most competitive pricing and transparent fee structure i
 
 ## Key Features
 - **Dynamic Course Catalog:** Centrally managed pricing and course data ensuring accuracy across the UI.
+- **Subscription Services:** Dedicated section for "CPR Training Subscriptions" targeting healthcare organizations with recurring training needs (Monthly/Quarterly).
 - **Trust Indicators:** A dedicated testimonials carousel and prominent branding from major certifying bodies.
 - **Integrated Booking:** A secure, timezone-aware booking iframe with Pacific Time synchronization for all notifications.
 - **Social Proof & Reviews:** Integrated Google Reviews and student testimonials to build community trust.
