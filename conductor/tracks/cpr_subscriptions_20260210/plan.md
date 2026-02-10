@@ -1,6 +1,6 @@
 # Implementation Plan - CPR Training Subscriptions
 
-## Phase 1: Subscription Section Component
+## Phase 1: Subscription Section Component [checkpoint: 47ed772]
 - [x] Task: Create SubscriptionsSection Structure [6db02ea]
     - [x] Create `src/components/SubscriptionsSection.test.tsx` and write failing tests (verify rendering of title, "New Service" badge, and pricing options).
     - [x] Create `src/components/SubscriptionsSection.tsx`.
