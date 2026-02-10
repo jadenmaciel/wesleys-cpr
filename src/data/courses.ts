@@ -10,9 +10,24 @@ export type Course = {
   notes?: string[]; // bullets like "Requires proof...", "10% returning..."
   isELearning?: boolean; // AHA e-learning link-out, no price/time shown
   elink?: string; // AHA URL when isELearning = true
+  targetAudience?: string[];
 };
 
 export const COURSES: Course[] = [
+  {
+    code: "CPR-SUB-MONTHLY",
+    name: "CPR Training Subscription (Monthly)",
+    price: 120,
+    desc: "Ensure your team is prepared for any situation by receiving expert training and support.",
+    targetAudience: ["Nursing facilities", "Clinics", "Detox facilities"],
+  },
+  {
+    code: "CPR-SUB-QUARTERLY",
+    name: "CPR Training Subscription (Quarterly)",
+    price: 200,
+    desc: "Ensure your team is prepared for any situation by receiving expert training and support.",
+    targetAudience: ["Nursing facilities", "Clinics", "Detox facilities"],
+  },
   {
     code: "HSV-FA",
     name: "HSV-First Aid",

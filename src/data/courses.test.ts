@@ -31,4 +31,32 @@ describe('COURSES data', () => {
     const course = COURSES.find(c => c.code === 'BLS-PROVIDER');
     expect(course?.desc).toContain('Mon & Wed at 8am');
   });
+
+  describe('Subscription Services', () => {
+    it('should have a Monthly Subscription option', () => {
+      const course = COURSES.find(c => c.code === 'CPR-SUB-MONTHLY');
+      expect(course).toBeDefined();
+      expect(course?.name).toContain('Subscription');
+      expect(course?.price).toBe(120);
+      expect(course?.desc).toContain('Ensure your team is prepared');
+      expect(course?.targetAudience).toEqual(expect.arrayContaining([
+        'Nursing facilities',
+        'Clinics',
+        'Detox facilities'
+      ]));
+    });
+
+    it('should have a Quarterly Subscription option', () => {
+      const course = COURSES.find(c => c.code === 'CPR-SUB-QUARTERLY');
+      expect(course).toBeDefined();
+      expect(course?.name).toContain('Subscription');
+      expect(course?.price).toBe(200);
+      expect(course?.desc).toContain('Ensure your team is prepared');
+      expect(course?.targetAudience).toEqual(expect.arrayContaining([
+        'Nursing facilities',
+        'Clinics',
+        'Detox facilities'
+      ]));
+    });
+  });
 });
