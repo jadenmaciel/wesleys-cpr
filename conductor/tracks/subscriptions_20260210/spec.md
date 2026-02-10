@@ -5,37 +5,31 @@ This feature introduces a new "CPR Training Subscriptions" service offering targ
 
 ## 2. Functional Requirements
 
-### 2.1 Services Section Update
-- **New Service Entry:** Add "CPR Training Subscriptions" to the list of services.
-- **Target Audience Display:** Explicitly list the target facility types:
-    - Nursing facilities
-    - Clinics
-    - Detox facilities
-- **Description:** Include the value proposition: "Ensure your team is prepared for any situation by receiving expert training and support."
+### 2.1 Dedicated Subscriptions Section
+- **New Section:** Create a dedicated visual section (e.g., `SubscriptionsSection`) on the landing page.
+- **Placement:** This section should be prominent, likely positioned after the "Pricing" or "Services" section.
+- **Content:**
+    - **Headline:** Clear title "CPR Training Subscriptions".
+    - **Target Audience:** Explicitly list "Nursing facilities, Clinics, Detox facilities".
+    - **Value Prop:** "Ensure your team is prepared..."
+    - **Pricing Cards:** Display the two options (Monthly $120, Quarterly $200) side-by-side within this section.
+    - **Call to Action:** "Enroll Today" buttons linking to Booky.buzz.
 
-### 2.2 Pricing Section Update
-- **New Pricing Cards:** Add two new pricing options for subscriptions:
-    - **Monthly:** $120
-    - **Quarterly:** $200
-- **Visual Highlight:** Apply a "Featured" or "New" badge/highlight style to these subscription cards to differentiate them from standard one-time classes.
-- **Call to Action (CTA):** Each card must have an "Enroll Today" button that opens/links to the existing Booky.buzz booking widget.
-
-### 2.3 Data Management
-- Update `src/data/courses.ts` (or equivalent data file) to include the new subscription service types and pricing details to ensuring a single source of truth.
+### 2.2 Data Management
+- Update `src/data/courses.ts` to include the new subscription service types (Completed in Phase 1).
 
 ## 3. Non-Functional Requirements
-- **Consistency:** Use existing `PricingCard` and service layout components.
-- **Responsiveness:** Ensure new content renders correctly on mobile, tablet, and desktop.
-- **Accessibility:** Ensure new buttons and content meet existing accessibility standards (contrast, focus states, ARIA labels).
+- **Consistency:** Use existing `PricingCard` components (or similar style) within the new section.
+- **Responsiveness:** Section must be fully responsive (stacking cards on mobile).
+- **Accessibility:** Section headings and structure must follow semantic HTML.
 
 ## 4. Acceptance Criteria
-- [ ] The "CPR Training Subscriptions" service appears on the Services page/section with the correct description and target audience.
-- [ ] Two new pricing cards (Monthly $120, Quarterly $200) appear in the Pricing section.
-- [ ] The subscription pricing cards have a distinct "Featured" or "New" visual indicator.
-- [ ] Clicking "Enroll Today" on a subscription card opens the Booky.buzz booking widget.
-- [ ] The implementation uses the shared data source in `src/data/`.
+- [ ] A new "CPR Training Subscriptions" section appears on the main page.
+- [ ] The section contains the target audience list and value proposition.
+- [ ] Monthly ($120) and Quarterly ($200) options are displayed clearly in this section.
+- [ ] "Enroll Today" buttons function correctly.
+- [ ] The standard Services and Pricing sections remain unchanged (do not include subscriptions there).
 
 ## 5. Out of Scope
-- Creating a separate dedicated landing page for subscriptions.
-- Implementing a custom payment processing flow (relies on existing Booky.buzz).
-- Custom design that deviates significantly from the existing design system.
+- Creating a separate page (kept as single-page section).
+- Mixing subscriptions into the main Pricing table.

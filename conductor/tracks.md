@@ -6,3 +6,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 - [~] **Track: Add CPR Training Subscriptions service and pricing.**
 *Link: [./tracks/subscriptions_20260210/](./tracks/subscriptions_20260210/)*
+
+---
+
+- [~] **Track: Add CPR Training Subscriptions section to the main page.**
+*Link: [./tracks/cpr_subscriptions_20260210/](./tracks/cpr_subscriptions_20260210/)*
