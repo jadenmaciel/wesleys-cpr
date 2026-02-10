@@ -9,6 +9,7 @@ import Booking from './components/Booking';
 import Testimonials from './components/Testimonials';
 import PoliciesSection from './components/PoliciesSection';
 import Footer from './components/Footer';
+import SubscriptionsSection from './components/SubscriptionsSection';
 function App() {
   return (
     <div className="min-h-screen bg-white">
@@ -37,6 +38,7 @@ function App() {
         <About />
         <Services />
         <Pricing />
+        <SubscriptionsSection />
         <Booking />
         <Testimonials />
         <PoliciesSection />

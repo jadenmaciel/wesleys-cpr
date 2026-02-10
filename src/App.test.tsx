@@ -1,9 +1,9 @@
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 
-describe('SEO Meta Tags', () => {
+describe('App Component', () => {
   it('should render correct meta tags', async () => {
     render(
       <HelmetProvider>
@@ -23,5 +23,14 @@ describe('SEO Meta Tags', () => {
       const ogDescription = document.querySelector('meta[property="og:description"]');
       expect(ogDescription?.getAttribute('content')).toContain("Professional CPR certification");
     });
+  });
+
+  it('should render the Subscriptions Section', () => {
+    render(
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
+    );
+    expect(screen.getByText('CPR Training Subscriptions')).toBeInTheDocument();
   });
 });
