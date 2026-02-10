@@ -7,13 +7,14 @@ type PricingCardProps = {
   badge?: string;
   className?: string;
   action?: React.ReactNode;
+  hideFees?: boolean;
 };
 
 /**
  * Pricing card component with fee disclosure and example online payment total.
  * Shows base price, fee disclosure, and calculated total with fee.
  */
-export default function PricingCard({ name, price, description, badge, className = '', action }: PricingCardProps) {
+export default function PricingCard({ name, price, description, badge, className = '', action, hideFees = false }: PricingCardProps) {
   const { fee, total } = calcOnlineFee(price);
 
   return (
@@ -29,20 +30,26 @@ export default function PricingCard({ name, price, description, badge, className
         <div className="text-2xl font-bold text-navy mb-1">${price.toFixed(2)}</div>
         <p className="text-xs text-navy/70">Base price</p>
       </div>
-      <div className="mb-4 p-3 rounded-lg bg-cream/50 border border-navy/10">
-        <p className="text-xs text-navy">
-          <strong>Payment Processing:</strong> Online/card payments add <strong>{(FEES.card_fee_percent * 100).toFixed(2)}% + ${FEES.card_fee_fixed.toFixed(2)}</strong> processing fee; cash has <strong>no fee</strong>. You'll see any fee and your grand total before paying online.
-        </p>
-      </div>
+      {!hideFees && (
+        <div className="mb-4 p-3 rounded-lg bg-cream/50 border border-navy/10">
+          <p className="text-xs text-navy">
+            <strong>Payment Processing:</strong> Online/card payments add <strong>{(FEES.card_fee_percent * 100).toFixed(2)}% + ${FEES.card_fee_fixed.toFixed(2)}</strong> processing fee; cash has <strong>no fee</strong>. You'll see any fee and your grand total before paying online.
+          </p>
+        </div>
+      )}
       <div className="pt-4 border-t border-navy/10 mt-auto">
-        <div className="flex justify-between items-center mb-1">
-          <span className="text-sm text-navy/80">If paying online/card:</span>
-          <span className="text-lg font-semibold text-navy">${total.toFixed(2)}</span>
-        </div>
-        <div className="flex justify-between items-center text-xs text-navy/60">
-          <span>Processing fee ({(FEES.card_fee_percent * 100).toFixed(2)}% + ${FEES.card_fee_fixed.toFixed(2)}):</span>
-          <span>${fee.toFixed(2)}</span>
-        </div>
+        {!hideFees && (
+          <>
+            <div className="flex justify-between items-center mb-1">
+              <span className="text-sm text-navy/80">If paying online/card:</span>
+              <span className="text-lg font-semibold text-navy">${total.toFixed(2)}</span>
+            </div>
+            <div className="flex justify-between items-center text-xs text-navy/60">
+              <span>Processing fee ({(FEES.card_fee_percent * 100).toFixed(2)}% + ${FEES.card_fee_fixed.toFixed(2)}):</span>
+              <span>${fee.toFixed(2)}</span>
+            </div>
+          </>
+        )}
         {action && (
           <div className="mt-6">
             {action}

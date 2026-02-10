@@ -43,6 +43,7 @@ export default function SubscriptionsSection() {
                 description={sub.desc}
                 badge="Featured"
                 className="shadow-lg border-red/20"
+                hideFees={true}
                 action={
                   <PrimaryButton href="#booking" className="w-full">
                     Enroll Today

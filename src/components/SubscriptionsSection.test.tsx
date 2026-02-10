@@ -32,4 +32,9 @@ describe('SubscriptionsSection Component', () => {
       expect(btn.closest('a')).toHaveAttribute('href', '#booking');
     });
   });
+
+  it('should NOT show payment processing fees', () => {
+    render(<SubscriptionsSection />);
+    expect(screen.queryByText(/Payment Processing/i)).not.toBeInTheDocument();
+  });
 });
