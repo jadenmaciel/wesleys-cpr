@@ -1,12 +1,12 @@
 # Implementation Plan - CPR Training Subscriptions
 
-## Phase 1: Data Model & Types
+## Phase 1: Data Model & Types [checkpoint: 93de4f1]
 - [x] Task: Update Course Data
     - [x] Create/Update unit tests for `src/data/courses.ts` to expect new Subscription entries.
     - [x] Add "CPR Training Subscriptions" (Monthly & Quarterly) to `src/data/courses.ts`.
     - [x] Add necessary type definitions for "Target Audience" fields if strictly typed.
     <!-- 2d1c83f -->
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Data Model & Types' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Data Model & Types' (Protocol in workflow.md)
 
 ## Phase 2: Pricing Card Component Enhancements
 - [ ] Task: Add "Featured" Support to PricingCard
