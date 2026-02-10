@@ -16,7 +16,7 @@
     - [ ] Place the component in the desired location (e.g., between Services and Pricing, or after Pricing).
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Integration & Placement' (Protocol in workflow.md)
 
-## Phase 3: Final Polish
+## Phase 3: Final Polish [checkpoint: 589d767]
 - [x] Task: Responsive & Accessibility Audit [36c5187]
     - [x] Verify the section stacks correctly on mobile.
     - [x] Check color contrast and semantic heading structure.
