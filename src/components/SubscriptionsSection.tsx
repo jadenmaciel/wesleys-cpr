@@ -44,7 +44,7 @@ export default function SubscriptionsSection() {
                 badge="Featured"
                 className="shadow-lg border-red/20"
                 action={
-                  <PrimaryButton href="https://booky.buzz/booking/wesleys-cpr" className="w-full">
+                  <PrimaryButton href="#booking" className="w-full">
                     Enroll Today
                   </PrimaryButton>
                 }

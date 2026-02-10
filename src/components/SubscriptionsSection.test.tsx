@@ -29,7 +29,7 @@ describe('SubscriptionsSection Component', () => {
     const buttons = screen.getAllByText('Enroll Today');
     expect(buttons).toHaveLength(2);
     buttons.forEach(btn => {
-      expect(btn.closest('a')).toHaveAttribute('href', 'https://booky.buzz/booking/wesleys-cpr');
+      expect(btn.closest('a')).toHaveAttribute('href', '#booking');
     });
   });
 });
