@@ -9,5 +9,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Add CPR Training Subscriptions section to the main page.**
+- [x] **Track: Add CPR Training Subscriptions section to the main page.**
 *Link: [./tracks/cpr_subscriptions_20260210/](./tracks/cpr_subscriptions_20260210/)*
