@@ -11,11 +11,18 @@ export default function SubscriptionsSection() {
         <div className="flex flex-col md:flex-row gap-12 items-start">
           {/* Left Column: Info */}
           <div className="flex-1">
-            <h2 className="text-3xl font-bold text-navy mb-6">CPR Training Subscriptions</h2>
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <h2 className="text-3xl font-bold text-navy">CPR Training Subscriptions</h2>
+              <span className="bg-red text-cream text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                New Service
+              </span>
+            </div>
             <p className="text-lg text-navy/80 mb-6">
-              Ensure your team is prepared for any situation by receiving expert training and support.
-              Our subscription plans are designed for healthcare organizations including:
+              Join our CPR training subscriptions to receive comprehensive guidance and scenarios, 
+              fulfilling all AHA and DHCS hands-on training requirements while ensuring your group 
+              is well-prepared for any emergency situation.
             </p>
+            <p className="text-navy/80 font-medium mb-4">Designed for healthcare organizations including:</p>
             <ul className="space-y-3 mb-8">
               {['Nursing facilities', 'Clinics', 'Detox facilities'].map((item) => (
                 <li key={item} className="flex items-center text-navy/80">
@@ -31,13 +38,13 @@ export default function SubscriptionsSection() {
             {subscriptions.map((sub) => (
               <PricingCard
                 key={sub.code}
-                name={sub.name}
+                name={sub.name.replace('CPR Training Subscription', '').replace(/[()]/g, '').trim()}
                 price={typeof sub.price === 'number' ? sub.price : 0}
                 description={sub.desc}
                 badge="Featured"
                 className="shadow-lg border-red/20"
                 action={
-                  <PrimaryButton href="#booking" className="w-full">
+                  <PrimaryButton href="https://booky.buzz/booking/wesleys-cpr" className="w-full">
                     Enroll Today
                   </PrimaryButton>
                 }

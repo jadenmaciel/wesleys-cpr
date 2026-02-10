@@ -1,52 +1,35 @@
-import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
 import SubscriptionsSection from './SubscriptionsSection';
-import { COURSES } from '../data/courses';
 
-// Mock the PricingCard component to avoid testing its internal logic
-vi.mock('./PricingCard', () => ({
-  default: ({ name, price, description }: any) => (
-    <div data-testid="pricing-card">
-      <h3>{name}</h3>
-      <span>${price}</span>
-      <p>{description}</p>
-    </div>
-  ),
-}));
-
-describe('SubscriptionsSection', () => {
-  it('renders the section title', () => {
+describe('SubscriptionsSection Component', () => {
+  it('should render the title with New Service badge', () => {
     render(<SubscriptionsSection />);
     expect(screen.getByText('CPR Training Subscriptions')).toBeInTheDocument();
+    expect(screen.getByText('New Service')).toBeInTheDocument();
   });
 
-  it('renders the target audience list', () => {
+  it('should render the description and target audience', () => {
     render(<SubscriptionsSection />);
+    expect(screen.getByText(/comprehensive guidance and scenarios/i)).toBeInTheDocument();
     expect(screen.getByText(/Nursing facilities/i)).toBeInTheDocument();
     expect(screen.getByText(/Clinics/i)).toBeInTheDocument();
-    expect(screen.getByText(/Detox facilities/i)).toBeInTheDocument();
   });
 
-  it('renders the value proposition', () => {
+  it('should render pricing options correctly', () => {
     render(<SubscriptionsSection />);
-    expect(screen.getAllByText(/Ensure your team is prepared/i).length).toBeGreaterThan(0);
+    expect(screen.getByText('Monthly')).toBeInTheDocument();
+    expect(screen.getByText('$120.00')).toBeInTheDocument();
+    expect(screen.getByText('Quarterly')).toBeInTheDocument();
+    expect(screen.getByText('$200.00')).toBeInTheDocument();
   });
 
-  it('renders two pricing cards for subscriptions', () => {
+  it('should have Enroll Today buttons that link to booking', () => {
     render(<SubscriptionsSection />);
-    const cards = screen.getAllByTestId('pricing-card');
-    expect(cards).toHaveLength(2);
-  });
-
-  it('passes the correct data to the pricing cards', () => {
-    render(<SubscriptionsSection />);
-    
-    // Check for Monthly card data
-    expect(screen.getByText('CPR Training Subscription (Monthly)')).toBeInTheDocument();
-    expect(screen.getByText('$120')).toBeInTheDocument();
-
-    // Check for Quarterly card data
-    expect(screen.getByText('CPR Training Subscription (Quarterly)')).toBeInTheDocument();
-    expect(screen.getByText('$200')).toBeInTheDocument();
+    const buttons = screen.getAllByText('Enroll Today');
+    expect(buttons).toHaveLength(2);
+    buttons.forEach(btn => {
+      expect(btn.closest('a')).toHaveAttribute('href', 'https://booky.buzz/booking/wesleys-cpr');
+    });
   });
 });
