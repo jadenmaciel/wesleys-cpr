@@ -34,4 +34,4 @@ logs/
 *.tsbuildinfo
 
 # AI/LLM temporary artifacts
-.gemini_tmp/
+.gemini_tmp/coverage/

@@ -1,4 +1,4 @@
-# Track finalize_todo_20260206 Context
+# Track subscriptions_20260210 Context
 
 - [Specification](./spec.md)
 - [Implementation Plan](./plan.md)
