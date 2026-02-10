@@ -8,21 +8,20 @@
     <!-- 2d1c83f -->
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Data Model & Types' (Protocol in workflow.md)
 
-## Phase 2: Pricing Card Component Enhancements
-- [ ] Task: Add "Featured" Support to PricingCard
-    - [ ] Create unit test for `PricingCard` component to verify "featured" styling/prop.
-    - [ ] Implement `featured` prop in `PricingCard.tsx` (e.g., distinct border, badge, or background) to highlight subscription options.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Pricing Card Component Enhancements' (Protocol in workflow.md)
+## Phase 2: Subscriptions Section Component
+- [x] Task: Create SubscriptionsSection Component
+    - [x] Create `src/components/SubscriptionsSection.test.tsx` and write failing tests (verify rendering of title, target audience, and pricing cards).
+    - [x] Create `src/components/SubscriptionsSection.tsx`.
+    - [x] Implement the layout: Title, Target Audience list, and a grid for the two pricing cards.
+    - [x] Reuse `PricingCard` (or similar logic) to display the subscription options from `COURSES` data.
+    <!-- 31d74dd -->
+- [ ] Task: Conductor - User Manual Verification 'Phase 2: Subscriptions Section Component' (Protocol in workflow.md)
 
-## Phase 3: Integration (Services & Pricing Sections)
-- [ ] Task: Update Services Display
-    - [ ] Update `Services.test.tsx` to verify presence of Subscription service and specific target audience list (Nursing, Clinics, etc.).
-    - [ ] Implement rendering logic in `Services.tsx` to include the new Subscription entry.
-- [ ] Task: Update Pricing Display
-    - [ ] Update `App.test.tsx` or `Pricing.tsx` tests to verify presence of new Monthly/Quarterly cards.
-    - [ ] Implement rendering logic in `Pricing.tsx` to display the new cards using the `featured` prop.
-    - [ ] Verify "Enroll Today" CTA links to Booky.buzz correctly.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Integration (Services & Pricing Sections)' (Protocol in workflow.md)
+## Phase 3: Integration
+- [ ] Task: Add to Landing Page
+    - [ ] Update `App.test.tsx` to verify `SubscriptionsSection` is rendered.
+    - [ ] Import and place `SubscriptionsSection` in `App.tsx` (e.g., after Pricing or Services).
+- [ ] Task: Conductor - User Manual Verification 'Phase 3: Integration' (Protocol in workflow.md)
 
 ## Phase 4: Final Verification
 - [ ] Task: Responsive & Accessibility Check
