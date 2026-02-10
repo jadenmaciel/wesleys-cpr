@@ -9,7 +9,7 @@
     - [ ] Ensure "Enroll Today" buttons link to the general booking URL.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Subscription Section Component' (Protocol in workflow.md)
 
-## Phase 2: Integration & Placement
+## Phase 2: Integration & Placement [checkpoint: 36c5187]
 - [x] Task: Integrate into Main Page [8e14dec]
     - [x] Update `App.test.tsx` (or main page test) to verify the new section is present.
     - [x] Import `SubscriptionsSection` in `App.tsx`.
